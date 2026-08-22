@@ -44,5 +44,11 @@ phonenumbers : Analyse et valide la provenance, l'opérateur et la structuration
 textstat : Calcule la lisibilité et la complexité d'un texte (ex: niveau de lecture, clarté). Cela permet de mesurer si un message est formulé de manière simple et persuasive.
 nltk (Natural Language Toolkit) : Permet de décomposer un texte sans IA (analyse par mots-clés, fréquence des mots, détection de tonalité basique par dictionnaire) pour comprendre la structure d'un discours manipulateur ou d'un e-mail.
 
+- le programme récupère texte réseau sociaux et entreprise, even surveilling their real-life movements and activities.
+- choisis un hack : baiting , etc.
+- a des données
+- how to recognize / prevent social engineering 
+  
+
 
 
