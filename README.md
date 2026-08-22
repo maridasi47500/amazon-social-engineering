@@ -45,10 +45,10 @@ textstat : Calcule la lisibilité et la complexité d'un texte (ex: niveau de le
 nltk (Natural Language Toolkit) : Permet de décomposer un texte sans IA (analyse par mots-clés, fréquence des mots, détection de tonalité basique par dictionnaire) pour comprendre la structure d'un discours manipulateur ou d'un e-mail.
 
 - le programme récupère texte réseau sociaux et entreprise, even surveilling their real-life movements and activities.
-- choisis un hack : baiting , etc.
+- choisis un hack : baiting , etc. qui ont des human traits
 - a des données
 - how to recognize / prevent social engineering 
-  
+- pays étranger : jours fériés, language ou culture de la region
 
 
 
