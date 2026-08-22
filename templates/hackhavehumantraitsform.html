@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldhack_id">hack_id</label><select id="somefieldhack_id" name="hack_id"><option value="novalue">no value</option>
+{% for somehack in tousleshack %}
+<option value="{{ somehack['id'] }}">{{ somehack['name'] }}</option>{% endfor %}
+</select></div>
+<div class="field"><label for="somefieldhuman_traits_id">human_traits_id</label><select id="somefieldhuman_traits_id" name="human_traits_id"><option value="novalue">no value</option>
+{% for somehuman_traits in tousleshuman_traits %}
+<option value="{{ somehuman_traits['id'] }}">{{ somehuman_traits['name'] }}</option>{% endfor %}
+</select></div><div class="actions"><input type="submit"/></div></form>{% for x in hackhavehumantraitss %}{{x["hack_id"] }}{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_hackhavehumantraits"> add one hackhavehumantraits</a>{% endblock %}

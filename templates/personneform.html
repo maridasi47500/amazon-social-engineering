@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldpersonnehack_id">hack_id</label><input type="text" id="somefieldpersonnehack_id" name="hack_id"/></div>
+<div class="field"><label for="somefieldpersonnepic">pic</label><input type="file" id="somefieldpersonnepic" name="pic"/></div>
+<div class="field"><label for="somefieldpersonnenomcomplet">nomcomplet</label><input type="text" id="somefieldpersonnenomcomplet" name="nomcomplet"/></div>
+<div class="field"><label for="somefieldpersonneprenom">prenom</label><input type="text" id="somefieldpersonneprenom" name="prenom"/></div>
+<div class="field"><label for="somefieldpersonnenomfamille">nomfamille</label><input type="text" id="somefieldpersonnenomfamille" name="nomfamille"/></div>
+<div class="field"><label for="somefieldpersonnesuffixe">suffixe</label><input type="text" id="somefieldpersonnesuffixe" name="suffixe"/></div>
+<div class="field"><label for="somefieldpersonnetitre">titre</label><input type="text" id="somefieldpersonnetitre" name="titre"/></div>
+<div class="field"><label for="somefieldpersonnefm">fm</label><input type="text" id="somefieldpersonnefm" name="fm"/></div>
+<div class="field"><label for="somefieldpersonnephone">phone</label><input type="telephone" id="somefieldpersonnephone" name="phone"/></div>
+<div class="field"><label for="somefieldpersonneemail">email</label><input type="email" id="somefieldpersonneemail" name="email"/></div>
+<div class="field"><label for="somefieldpays_region_linguistique_id">pays_region_linguistique_id</label><select id="somefieldpays_region_linguistique_id" name="pays_region_linguistique_id"><option value="novalue">no value</option>
+{% for somepays_region_linguistique in touslespays_region_linguistique %}
+<option value="{{ somepays_region_linguistique['id'] }}">{{ somepays_region_linguistique['name'] }}</option>{% endfor %}
+</select></div>
+<div class="field"><label for="somefieldpersonnedescription">description</label><input type="text" id="somefieldpersonnedescription" name="description"/></div><div class="actions"><input type="submit"/></div></form>{% for x in personnes %}{{x["hack_id"] }}{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_personne"> add one personne</a>{% endblock %}

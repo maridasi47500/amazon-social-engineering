@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldtexte_reseau_sociaux_companynom_social_media">nom_social_media</label><input type="text" id="somefieldtexte_reseau_sociaux_companynom_social_media" name="nom_social_media"/></div>
+<div class="field"><label for="somefieldcompany_id">company_id</label><select id="somefieldcompany_id" name="company_id"><option value="novalue">no value</option>
+{% for somecompany in touslescompany %}
+<option value="{{ somecompany['id'] }}">{{ somecompany['name'] }}</option>{% endfor %}
+</select></div>
+<div class="field"><label for="somefieldtexte_reseau_sociaux_companycontent">content</label><input type="text" id="somefieldtexte_reseau_sociaux_companycontent" name="content"/></div><div class="actions"><input type="submit"/></div></form>{% for x in texte_reseau_sociaux_companys %}{{x["nom_social_media"] }}{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_texte_reseau_sociaux_company"> add one texte_reseau_sociaux_company</a>{% endblock %}
