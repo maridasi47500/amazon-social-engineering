@@ -402,9 +402,9 @@ split('.')[-1]
     if find_email_phone == "yes":
       myfieldtype="textarea"
       requestfiles+="""
-      email = re.findall(r'\S+@\S+', hey["{paramname}"])
+      email = re.findall(r'\\S+@\\S+', hey["{paramname}"])
 
-      phone = re.findall(r'\d{10}', hey["{paramname}"])
+      phone = re.findall(r'\\d{10}', hey["{paramname}"])
       
       print("Email:", email)
       print("Phone:", phone)
