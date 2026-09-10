@@ -109,7 +109,7 @@ programmingl={
   "yaml": "YAML "
 }
 for x in items:
-    normalitems.replace(":send_email","").replace(":image_to_text","").replace(":speech_to_text","").replace(":translate","").replace(":sentiment","").replace(":find_organization_group","").replace(":did_you_mean","").replace(":hidden","").replace(":detect_language","").replace(":detect_programming_language","").replace(":textarea","").replace(":find_email_phone","").replace(":sunglasses","").replace(":recognize_face","").replace(":maquille","").replace(":staff","").replace(":color","").replace(":password","").replace(":email","").replace(":datetime","").replace(":date","").replace(":time","").replace(":radio","").replace(":checkbox","").replace(":file","").replace(":references",""))
+    normalitems.replace(":send_email","").replace(":image_to_text","").replace(":speech_to_text","").replace(":translate","").replace(":sentiment","").replace(":find_organization_group","").replace(":did_you_mean","").replace(":hidden","").replace(":detect_language","").replace(":detect_programming_language","").replace(":textarea","").replace(":find_email_phone","").replace(":sunglasses","").replace(":recognize_face","").replace(":maquille","").replace(":staff","").replace(":color","").replace(":password","").replace(":email","").replace(":datetime","").replace(":date","").replace(":time","").replace(":radio","").replace(":checkbox","").replace(":file","").replace(":references","")
 myfavouriteitem=normalitems[2]
 referencesstr=""
 postreferences=""
