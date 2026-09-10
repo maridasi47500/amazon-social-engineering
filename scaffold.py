@@ -261,7 +261,7 @@ while index < (len(items)):
 """.format(tablename=filename,columnname=paramname)
 
         mylastrowid+="""
-            picvalue=dict({'pic': "static/scores/samplescoremyscore_"""+paramname+""""+mylastrowid+"/"+soup.find('img').get("src"), 'id': mylastrowid})
+            picvalue=dict({'pic': "static/scores/samplescore"""+filename+"_"+paramname+""""+mylastrowid+"/"+soup.find('img').get("src"), 'id': mylastrowid})
         except:
             picvalue=dict({'pic': "", "id": mylastrowid})
         print(picvalue)

@@ -94,7 +94,7 @@ def add_one_scoretosend():
             s = f.read()
             soup = BeautifulSoup(s)
 
-            picvalue=dict({'pic': "static/scores/samplescoremyscore_myscore"+mylastrowid+"/"+soup.find('img').get("src"), 'id': mylastrowid})
+            picvalue=dict({'pic': "static/scores/samplescorescoretosend_myscore"+mylastrowid+"/"+soup.find('img').get("src"), 'id': mylastrowid})
         except:
             picvalue=dict({'pic': "", "id": mylastrowid})
         print(picvalue)
