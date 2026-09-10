@@ -1,4 +1,6 @@
 # amazon-social-engineering
+![alt text](favpic1.png)
+
 Quelle tes sont qualités ?
 Il existe plusieurs bibliothèques Python spécifiques qui permettent d'estimer ou d'analyser la nationalité, le pays d'origine ou l'ethnicité d'une personne à partir de son nom et prénom :
 

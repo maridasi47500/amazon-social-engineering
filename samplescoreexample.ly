@@ -29,7 +29,7 @@ tagline = \markup {"" on \simple #(strftime "%x" (localtime (current-time)))}
 
         }
 #(set-default-paper-size "a4")
-#(set-global-staff-size 18)
+#(set-global-staff-size 42)
 \paper {
 
        }

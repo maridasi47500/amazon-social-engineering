@@ -9,4 +9,9 @@
 <div class="field"><label for="somefieldscoretosendreceiver_name">receiver_name</label><input type="text" id="somefieldscoretosendreceiver_name" name="receiver_name"/></div>
 <div class="field"><label for="somefieldscoretosendreceiver_email">receiver_email</label><input type="text" id="somefieldscoretosendreceiver_email" name="receiver_email"/></div>
 <div class="field"><label for="somefieldmessage">message</label><textarea id="somefieldmessage1" name="message"></textarea>
-</div><div class="actions"><input type="submit"/></div></form>{% for x in scoretosends %}<p class="mytitle_score">{{x["title_score"] }}</p>{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_scoretosend"> add one scoretosend</a>{% endblock %}
+</div><div class="actions"><input type="submit"/></div></form>{% for x in scoretosends %}
+
+<p class="mytitle_score">{{x["title_score"] }}</p>
+<p class="mytitle_score"><img src="{{x["pic"] }}" /></p>
+
+{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_scoretosend"> add one scoretosend</a>{% endblock %}

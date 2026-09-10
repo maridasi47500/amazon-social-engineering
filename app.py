@@ -25,7 +25,7 @@ import re
 #image to text
 #from PIL import Image
 #import pytesseract
-#from sendemail import Sendemail
+from sendemail import Sendemail
 
 
 from bs4 import BeautifulSoup
@@ -66,11 +66,7 @@ def add_one_scoretosend():
         hey=dict(request.form)
 
 
-        try:
-            Sendemail(receiver_emails=[hey["receiver_email"]], receiver_names=[hey["receiver_name"]], filename=hey["pic"], message=hey["message"])
-            
-        except:
-            print("error ouille")
+
 
 
         one_user = query_db("insert into scoretosend (title_score,composer,myscore,pic,time_signature,key_signature,receiver_name,receiver_email,message) values (:title_score,:composer,:myscore,:pic,:time_signature,:key_signature,:receiver_name,:receiver_email,:message)",hey, one=True)
@@ -87,7 +83,8 @@ def add_one_scoretosend():
         file_pointer = open("./static/scores/scoretosend_myscore_sample_"+mylastrowid+".html", "w")
         file_pointer.write("<lilypond staffsize=34>"+contents+"</lilypond>")
         file_pointer.close()
-        subprocess.run(["lilypond-book", "static/scores/scoretosend_myscore_sample_"+mylastrowid+".html", "-f", "html", "--output", "static/scores/samplescorescoretosend_myscore"+mylastrowid]) 
+        p1=subprocess.Popen(["lilypond-book", "static/scores/scoretosend_myscore_sample_"+mylastrowid+".html", "-f", "html", "--output", "static/scores/samplescorescoretosend_myscore"+mylastrowid]) 
+        exit_codes = [p.wait() for p in (p1,)]
 
         try:
             f= open("static/scores/samplescorescoretosend_myscore"+mylastrowid+"/scoretosend_myscore_sample_"+mylastrowid+".html")
@@ -98,8 +95,15 @@ def add_one_scoretosend():
         except:
             picvalue=dict({'pic': "", "id": mylastrowid})
         print(picvalue)
+        hey["pic"]=picvalue["pic"]
 
         hello_there = query_db("update scoretosend set pic = :pic where id = :id",picvalue, one=True)
+        user = query_db('select * from scoretosend')
+        try:
+            Sendemail(receiver_emails=[hey["receiver_email"]], receiver_names=[hey["receiver_name"]], filename=hey["pic"], message=hey["message"])
+            
+        except:
+            print("error ouille")
 
         return render_template("scoretosendform.html", scoretosends=user, one_user=one_user, the_title="add new scoretosend")
 

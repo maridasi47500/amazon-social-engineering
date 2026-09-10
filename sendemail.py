@@ -41,7 +41,7 @@ class Sendemail():
         
                 try:
                     # Open PDF file in binary mode
-                    with open("./static/photos/" + filename, "rb") as attachment:
+                    with open(filename, "rb") as attachment:
                                     part = MIMEBase("application", "octet-stream")
                                     part.set_payload(attachment.read())
         
