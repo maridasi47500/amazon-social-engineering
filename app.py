@@ -66,7 +66,7 @@ def add_one_scoretosend():
         hey=dict(request.form)
 
 
-        one_user = query_db("insert into scoretosend (title_score,composer,myscore,pic,time_signature,pic:signature,receiver_name,receiver_email,message) values (:title_score,:composer,:myscore,:pic,:time_signature,:pic:signature,:receiver_name,:receiver_email,:message)",hey, one=True)
+        one_user = query_db("insert into scoretosend (title_score,composer,myscore,pic,time_signature,key_signature,receiver_name,receiver_email,message) values (:title_score,:composer,:myscore,:pic,:time_signature,:key_signature,:receiver_name,:receiver_email,:message)",hey, one=True)
         mylastrowid=str(one_user["myid"])
         user = query_db('select * from scoretosend')
 

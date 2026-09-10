@@ -33,7 +33,7 @@ create table if not exists scoretosend(
             myscore text,
             pic text,
             time_signature text,
-            pic:signature text,
+            key_signature text,
             receiver_name text,
             receiver_email text,
             message text
