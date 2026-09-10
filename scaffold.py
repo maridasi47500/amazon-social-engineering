@@ -531,7 +531,7 @@ mystr+="  , created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP"
 
 mystr+="""                );
 """
-if filename == "language" or name == "languages":
+if filename == "language" or filename == "languages":
     code={
   "ab": "abk",
   "aa": "aar",
