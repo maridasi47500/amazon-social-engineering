@@ -57,3 +57,47 @@ def hello_world():
     one_user = query_db('select * from contacts where first_name = ?',
                 [the_username], one=True)
     return render_template("hey.html", users=user, one_user=one_user, the_title="my title")
+@app.route("/add_one_scoretosend", methods=["GET","POST"])
+def add_one_scoretosend():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        hey=dict(request.form)
+
+
+        one_user = query_db("insert into scoretosend (title_score,composer,myscore,pic,time_signature,pic:signature,receiver_name,receiver_email,message) values (:title_score,:composer,:myscore,:pic,:time_signature,:pic:signature,:receiver_name,:receiver_email,:message)",hey, one=True)
+        mylastrowid=str(one_user["myid"])
+        user = query_db('select * from scoretosend')
+
+
+        file_pointer = open("./samplescoreexample.ly")
+        contents = file_pointer.read()
+        contents=contents.replace("KEYSCOREHERE", request.form["key_signature"].replace(" "," \\")).replace("TIMESCOREHERE", request.form["time_signature"]).replace("CONTENTSCOREHERE", request.form["myscore"])
+        file_pointer = open("./static/scores/scoretosend_myscore_sample_"+mylastrowid+".ly", "w")
+        file_pointer.write(contents)
+        file_pointer.close()
+        file_pointer = open("./static/scores/scoretosend_myscore_sample_"+mylastrowid+".html", "w")
+        file_pointer.write("<lilypond staffsize=34>"+contents+"</lilypond>")
+        file_pointer.close()
+        subprocess.run(["lilypond-book", "static/scores/scoretosend_myscore_sample_"+mylastrowid+".html", "-f", "html", "--output", "static/scores/samplescorescoretosend_myscore"+mylastrowid]) 
+
+        try:
+            f= open("static/scores/samplescorescoretosend_myscore"+mylastrowid+"/scoretosend_myscore_sample_"+mylastrowid+".html")
+            s = f.read()
+            soup = BeautifulSoup(s)
+
+            picvalue=dict({'pic': "static/scores/samplescoremyscore_mymusic"+mylastrowid+"/"+soup.find('img').get("src"), 'id': mylastrowid})
+        except:
+            picvalue=dict({'pic': "", "id": mylastrowid})
+        print(picvalue)
+
+        hello_there = query_db("update scoretosend set pic = :pic where id = :id",picvalue, one=True)
+
+        return render_template("scoretosendform.html", scoretosends=user, one_user=one_user, the_title="add new scoretosend")
+
+
+    user = query_db('select * from scoretosend')
+    one_user = query_db("select * from scoretosend limit 1", one=True)
+    return render_template("scoretosendform.html", scoretosends=user, one_user=one_user, the_title="add new scoretosend")
+

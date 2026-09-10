@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldscoretosendtitle_score">title_score</label><input type="text" id="somefieldscoretosendtitle_score" name="title_score"/></div>
+<div class="field"><label for="somefieldscoretosendcomposer">composer</label><input type="text" id="somefieldscoretosendcomposer" name="composer"/></div>
+<div class="field"><label for="somefieldmyscore">myscore</label><textarea id="somefieldmyscore1" name="myscore"></textarea>
+</div>
+<div class="field"><label for="somefieldscoretosendpic">pic</label><input type="text" id="somefieldscoretosendpic" name="pic"/></div>
+<div class="field"><label for="somefieldscoretosendtime_signature">time_signature</label><input type="text" id="somefieldscoretosendtime_signature" name="time_signature"/></div>
+<div class="field"><label for="somefieldscoretosendpic:signature">pic:signature</label><input type="text" id="somefieldscoretosendpic:signature" name="pic:signature"/></div>
+<div class="field"><label for="somefieldscoretosendreceiver_name">receiver_name</label><input type="text" id="somefieldscoretosendreceiver_name" name="receiver_name"/></div>
+<div class="field"><label for="somefieldscoretosendreceiver_email">receiver_email</label><input type="text" id="somefieldscoretosendreceiver_email" name="receiver_email"/></div>
+<div class="field"><label for="somefieldscoretosendmessage">message</label><input type="text" id="somefieldscoretosendmessage" name="message"/></div><div class="actions"><input type="submit"/></div></form>{% for x in scoretosends %}<p class="mytitle_score">{{x["title_score"] }}</p>{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_scoretosend"> add one scoretosend</a>{% endblock %}
