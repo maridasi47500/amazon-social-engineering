@@ -26,3 +26,15 @@ INSERT OR IGNORE INTO contacts (contact_id, first_name, last_name, email, phone)
 VALUES( '1', 'anonyme', 'noname', 'anonymous@email.fr', '+2653546434');
 INSERT OR IGNORE INTO contacts (contact_id, first_name, last_name, email, phone)
 VALUES( '2', 'anne onim', 'onim', 'anne.onim@email.com', '+86877779898');
+create table if not exists scoretosend(
+        id integer primary key autoincrement,
+        title_score text,
+            composer text,
+            myscore text,
+            pic text,
+            time_signature text,
+            key_signature text,
+            receiver_name text,
+            receiver_email text,
+            message text
+      , created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP                );
